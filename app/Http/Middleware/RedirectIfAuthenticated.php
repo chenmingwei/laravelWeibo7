@@ -20,6 +20,8 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             return redirect(RouteServiceProvider::HOME);
+//            session()->flash('info','您已经登录，无需再次操作');
+//            return redirect('/');
         }
 
         return $next($request);
